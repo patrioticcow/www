@@ -1,0 +1,126 @@
+<ion-view title="Register" class="register_page">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-header">
+		<form name="register" ng-submit="doRegister(register.$valid)" novalidate>
+			<div class="list card">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Name</span>
+					<input type="text" name="name" ng-model="user.name" placeholder="John" ng-minlength="3" ng-maxlength="30" required>
+
+					<div ng-show="register.name.$dirty && register.name.$invalid">
+						<small class="assertive" ng-show="register.name.$error.required">Please input your name</small>
+						<small class="assertive" ng-show="register.name.$error.minlength">Name is required to be at least 3 characters</small>
+						<small class="assertive" ng-show="register.name.$error.maxlength">Name cannot be longer than 30 characters</small>
+					</div>
+				</label>
+				<label class="item item-input item-select"> <span class="input-label">Age</span>
+					<select name="age" ng-model="user.age" required>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45">45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						<option value="51">51</option>
+						<option value="52">52</option>
+						<option value="53">53</option>
+						<option value="54">54</option>
+						<option value="55">55</option>
+						<option value="56">56</option>
+						<option value="57">57</option>
+						<option value="58">58</option>
+						<option value="59">59</option>
+						<option value="60">60</option>
+						<option value="61">61</option>
+						<option value="62">62</option>
+						<option value="63">63</option>
+						<option value="64">64</option>
+						<option value="65">65</option>
+						<option value="66">66</option>
+						<option value="67">67</option>
+						<option value="68">68</option>
+						<option value="69">69</option>
+						<option value="70">70</option>
+						<option value="71">71</option>
+						<option value="72">72</option>
+						<option value="73">73</option>
+						<option value="74">74</option>
+						<option value="75">75 +</option>
+					</select>
+					<div ng-show="register.age.$dirty && register.age.$invalid">
+						<small class="assertive" ng-show="register.age.$error.required">Age is required</small>
+					</div>
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Zip Code</span>
+					<input type="number" name="zipcode" ng-model="user.zipcode" placeholder="11111" ng-minlength="5" ng-maxlength="7" required>
+					<div ng-show="register.zipcode.$dirty && register.zipcode.$invalid">
+						<small class="assertive" ng-show="register.zipcode.$error.required">Zipcode is required</small>
+						<small class="assertive" ng-show="register.zipcode.$error.minlength">Zipcode is required to be at least 5 characters</small>
+						<small class="assertive" ng-show="register.zipcode.$error.maxlength">Zipcode cannot be longer than 20 characters</small>
+					</div>
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Email</span>
+					<input type="email" name="email" ng-model="user.email" placeholder="john@google.com" ng-minlength="7" ng-maxlength="50" required>
+					<div ng-show="register.email.$dirty && register.email.$invalid">
+						<small class="assertive" ng-show="register.email.$error.required">Email is required</small>
+						<small class="assertive" ng-show="register.email.$error.minlength">Email is required to be at least 7 characters</small>
+						<small class="assertive" ng-show="register.email.$error.maxlength">Email cannot be longer than 50 characters</small>
+					</div>
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Password</span>
+					<input type="password" name="password" ng-model="user.password" ng-minlength="4" ng-maxlength="30" required>
+					<div ng-show="register.password.$dirty && register.password.$invalid">
+						<small class="assertive" ng-show="register.password.$error.required">Password is required</small>
+						<small class="assertive" ng-show="register.password.$error.minlength">Password is required to be at least 4 characters</small>
+						<small class="assertive" ng-show="register.password.$error.maxlength">Password cannot be longer than 30 characters</small>
+					</div>
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Confirm Password</span>
+					<input type="password" name="confirmpassword" ng-model="user.confirmpassword" ng-minlength="4" ng-maxlength="30" data-match="user.password" required>
+					<div ng-show="register.confirmpassword.$dirty && register.confirmpassword.$invalid">
+						<small class="assertive" ng-show="register.confirmpassword.$error.required">Confirm Password is required</small>
+						<small class="assertive" ng-show="register.confirmpassword.$error.minlength">Confirm Password is required to be at least 4 characters</small>
+						<small class="assertive" ng-show="register.confirmpassword.$error.maxlength">Confirm Password cannot be longer than 30 characters</small>
+						<small class="assertive" ng-show="register.confirmpassword.$error.match">Password don't match</small>
+					</div>
+				</label>
+				<label class="item">
+					<button class="button button-block button-positive" type="submit" ng-disabled="register.$invalid">Register</button>
+				</label>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

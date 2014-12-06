@@ -1,0 +1,27 @@
+<ion-side-menus expose-aside-when="large">
+
+	<ion-pane ion-side-menu-content>
+		<ion-nav-bar class="bar-dark nav-title-slide-ios7">
+			<ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back
+			</ion-nav-back-button>
+		</ion-nav-bar>
+		<ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+	</ion-pane>
+
+	<ion-side-menu side="left">
+		<header class="bar bar-header bar-dark">
+			<h1 class="title">Menu</h1>
+		</header>
+		<ion-content class="has-header menu_page">
+			<ion-list>
+				<ion-item class="item item-dark" nav-clear menu-close ng-show="!isLoggedin" ng-click="login()">Login</ion-item>
+				<ion-item class="item item-dark" nav-clear menu-close ng-show="!isLoggedin" ng-href="#/app/register">Register</ion-item>
+				<ion-item class="item item-dark" nav-clear menu-close ng-href="#/app/home">Home</ion-item>
+				<ion-item class="item item-dark" nav-clear menu-close ng-show="isLoggedin" ng-href="#/app/profile/{{uid}}">Profile</ion-item>
+				<ion-item class="item item-dark" nav-clear menu-close ng-href="#/app/browse">Positions</ion-item>
+				<ion-item class="item item-dark" nav-clear menu-close ng-href="#/app/users">Users</ion-item>
+				<ion-item class="item item-dark" nav-clear menu-close ng-show="isLoggedin" ng-href="#/app/logout">Logout</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+</ion-side-menus>

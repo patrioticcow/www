@@ -1,0 +1,55 @@
+body, .ionic-body {
+	font-family : Monaco, Lucida Console, monospace
+}
+.scroll-content {
+}
+.item-body {
+	padding : 6px;
+}
+.cart_buttons .button {
+	font-size : 12px;
+	padding   : 0 6px;
+}
+.edit_button {
+	position : absolute;
+	right    : 4px;
+	top      : 4px;
+}
+.image_placeholder {
+	position      : absolute;
+	top           : 16px;
+	left          : 16px;
+	max-width     : 40px;
+	height        : 40px;
+	width         : 100%;
+	border-radius : 4px;
+}
+.profile_bg {
+	margin-top : 180px;
+	background : #ffffff;
+}
+input[type=file] {
+	color : transparent;
+}
+.home_page {
+	/*background : #c1c1c1 url('../img/splash.jpg') no-repeat center bottom;*/
+	background: #ffffff;
+}
+.home_header {
+	background : #222222;
+}
+.home_header h1 {
+	text-align : center;
+	padding    : 100px 0;
+	margin     : 0;
+}
+.menu-left {
+	background : #2b2b2b;
+}
+.browse_page, .register_page, .users_page, .menu_page, .profile_bg {
+	background : #2b2b2b;
+}
+.my-item {
+	left: 0;
+	right: 0;
+}

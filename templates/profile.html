@@ -1,0 +1,35 @@
+<ion-view title="Profile" style="background: #2b2b2b;">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<div>
+		<img ng-src="{{userImage}}" style="width: 100%">
+	</div>
+	<ion-content class="has-header">
+		<div class="profile_bg">
+			<div class="item item-avatar">
+				<img ng-src="{{userSmallImage}}">
+				<h2>{{user.name}}</h2>
+				<p>Age {{user.age}} Zip {{user.zipcode}}</p>
+			</div>
+
+			<div class="item" ng-show="isLoggedin">Upload image <input type="file" id="imageLoader" name="imageLoader"/></div>
+
+			<div class="item item-body">
+				<section>
+					<div ng-show="!isLoggedin">
+						<h3 ng-if="user.description" style="margin-top: 0">About</h3>
+						<p ng-if="user.description">{{user.description}}</p>
+					</div>
+					<div ng-show="isLoggedin">
+						<label class="item item-input item-floating-label">
+							<textarea name="about" rows="5" placeholder="About me" ng-model="data.description"></textarea>
+						</label>
+						<button class="button button-small button-positive button-full" ng-click="changeAbout()">Add description</button>
+					</div>
+				</section>
+			</div>
+		</div>
+		<canvas id="myCanvas" style="display: none"></canvas>
+	</ion-content>
+</ion-view>

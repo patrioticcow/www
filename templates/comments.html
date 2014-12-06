@@ -1,0 +1,27 @@
+<ion-view title="Comments">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-header">
+		<ion-refresher pulling-text="Pull to load more..." on-refresh="loadMoreComments()"></ion-refresher>
+		<ion-list>
+			<ion-item class="item item-avatar" ng-repeat="(key, comment) in comments track by key" id="{{key}}">
+				<img ng-src="{{comment.user.smallImage}}">
+
+				<h2>{{comment.user.name}}</h2>
+
+				<p>{{comment.message}}</p>
+			</ion-item>
+		</ion-list>
+		<br/> <br/>
+	</ion-content>
+	<div class="bar bar-footer item-input-inset" ng-show="showForm && isLoggedin">
+		<label class="item-input-wrapper"> <i class="icon ion-chatbox placeholder-icon"></i>
+			<input type="search" type="email" ng-model="comment.message" required placeholder="Message"> </label>
+		<button class="button button-stable" ng-click="leaveComment()">Send</button>
+	</div>
+	<div class="bar bar-footer item-input-inset" ng-show="!isLoggedin">
+		Login to leave comments.
+	</div>
+</ion-view>
+

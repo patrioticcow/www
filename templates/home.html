@@ -1,0 +1,27 @@
+<ion-view hide-nav-bar="true" scroll="false">
+	<ion-content class="home_page">
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+			<ion-slide ng-repeat="(key, card) in cards track by $index" id="{{key}}">
+				<div class="item item-divider">{{card.name}}</div>
+				<div class="item item-body">
+					<img class="full-image" ng-src="img/positions/{{card.image}}">
+					<p>{{card.description}}</p>
+				</div>
+				<div class="button-bar cart_buttons" ng-show="isLoggedin">
+					<a class="button button-light" ng-click="add(key, 'trys')"><i class="icon ion-thumbsup"></i> Try
+						<span id="trys_{{key}}">{{card.trys}}</span></a>
+					<a class="button button-light" ng-click="add(key, 'likes')"><i class="icon ion-thumbsup"></i> Like
+						<span id="likes_{{key}}">{{card.likes}}</span></a>
+					<a class="button button-light" href="#/app/comments/{{key}}"><i class="icon ion-chatbox"></i> Comment {{card.comments}}</a>
+				</div>
+				<div class="button-bar cart_buttons" ng-show="!isLoggedin">
+					<a class="button button-light" ng-click="login()"><i class="icon ion-thumbsup"></i> Try
+						<span id="trys_{{key}}">{{card.trys}}</span></a>
+					<a class="button button-light" ng-click="login()"><i class="icon ion-thumbsup"></i> Like
+						<span id="likes_{{key}}">{{card.likes}}</span></a>
+					<a class="button button-light" href="#/app/comments/{{key}}"><i class="icon ion-chatbox"></i> Comment {{card.comments}}</a>
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+	</ion-content>
+</ion-view>

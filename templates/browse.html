@@ -1,0 +1,35 @@
+<ion-view title="Browse" class="browse_page">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-header">
+		<ion-refresher pulling-text="Pull to load more..." on-refresh="loadMoreContent()"></ion-refresher>
+		<div class="list card" ng-repeat="(key, card) in cards track by $index" id="{{key}}">
+			<div class="item item-divider">{{card.name}}</div>
+			<div class="item item-body">
+				<div class="row responsive-sm">
+					<div class="col-50 item item-image">
+						<img class="full-image" ng-src="img/positions/{{card.image}}">
+					</div>
+					<div class="col-50 item">
+						<p>{{card.description}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="button-bar cart_buttons" ng-show="isLoggedin">
+				<a class="button button-light" ng-click="add(key, 'trys')"><i class="icon ion-thumbsup"></i> Try
+					<span id="trys_{{key}}">{{card.trys}}</span></a>
+				<a class="button button-light" ng-click="add(key, 'likes')"><i class="icon ion-thumbsup"></i> Like
+					<span id="likes_{{key}}">{{card.likes}}</span></a>
+				<a class="button button-light" href="#/app/comments/{{key}}"><i class="icon ion-chatbox"></i> Comment {{card.comments}}</a>
+			</div>
+			<div class="button-bar cart_buttons" ng-show="!isLoggedin">
+				<a class="button button-light" ng-click="login()"><i class="icon ion-thumbsup"></i> Try
+					<span id="trys_{{key}}">{{card.trys}}</span></a>
+				<a class="button button-light" ng-click="login()"><i class="icon ion-thumbsup"></i> Like
+					<span id="likes_{{key}}">{{card.likes}}</span></a>
+				<a class="button button-light" href="#/app/comments/{{key}}"><i class="icon ion-chatbox"></i> Comment {{card.comments}}</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
